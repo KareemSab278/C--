@@ -1,0 +1,1 @@
+gcc main.c challenges.c -o main; .\main
