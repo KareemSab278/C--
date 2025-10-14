@@ -3,19 +3,44 @@
 #include <stdbool.h>
 #include <math.h>
 #include <string.h>
+#include <stdlib.h>
 
 void flipInts();
 void factorial(int num);
 void isEvenOrOdd(int number);
 void largestNumber(int numberOfElems, int numbers[numberOfElems]);
 int convertBinaryToInt(char binary[]);
+int returnFibNumbers(int maxNum);
 
 void challenges()
 {
-    printf("output from binary: %d", convertBinaryToInt("00010010"));
+    int size = 10; // size for the arr (mind fuck)
+    int *output = malloc(sizeof(int) * size); // assigning size for the array on heap
+    // push returnFibNumbers to the output array
+    printf("the output for the fib series: ");
+    for (int i = 0; i < 9; i++)
+    {
+        output[i] = returnFibNumbers(i);
+        printf("%d", output[i]);
+        printf(", ");
+    }
+    
+    // printf the output array
+
+    // free memory
+    free(output);
 }
 
-// ###
+int returnFibNumbers(int maxNum)
+{
+
+    // The Fibonacci equation is defined by the recurrence relation Fn​=Fn−1​+Fn−2​ for n>1, with initial conditions F0​=0 and F1​=1.
+    // This means each number in the Fibonacci sequence is the sum of the two preceding numbers.
+
+    if (maxNum == 0) return 0;
+    if (maxNum == 1) return 1;
+    return returnFibNumbers(maxNum - 1) + returnFibNumbers(maxNum - 2);
+}
 
 int convertBinaryToInt(char binary[])
 {
