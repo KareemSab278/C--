@@ -11,24 +11,40 @@ void isEvenOrOdd(int number);
 void largestNumber(int numberOfElems, int numbers[numberOfElems]);
 int convertBinaryToInt(char binary[]);
 int returnFibNumbers(int maxNum);
+void do_a_flip(int arr[], int moves, int arrLen);
 
 void challenges()
 {
-    int size = 10; // size for the arr (mind fuck)
-    int *output = malloc(sizeof(int) * size); // assigning size for the array on heap
-    // push returnFibNumbers to the output array
-    printf("the output for the fib series: ");
-    for (int i = 0; i < 9; i++)
-    {
-        output[i] = returnFibNumbers(i);
-        printf("%d", output[i]);
-        printf(", ");
-    }
-    
-    // printf the output array
+    int testArr[] = {1, 2, 3, 4, 5};
+    int arrLen = sizeof(testArr) / sizeof(testArr[0]);
+    do_a_flip(testArr, 2, arrLen);
+}
 
-    // free memory
-    free(output);
+// q16
+
+
+
+void do_a_flip(int arr[], int moves, int arrLen)
+{
+    int tempNums[moves]; // this is fine.
+                         // int = 4 bytes
+    for (int i = 0; i < moves; i++)
+    {
+        tempNums[i] = arr[i];
+    }
+    for (int i = 0; i < arrLen - moves; i++)
+    {
+        arr[i] = arr[i + moves];
+    }
+    for (int i = 0; i < moves; i++)
+    {
+        arr[arrLen - moves + i] = tempNums[i];
+    }
+    for (int i = 0; i < arrLen; i++)
+    {
+        printf("%d, ", arr[i]);
+    }
+    printf("\n");
 }
 
 int returnFibNumbers(int maxNum)
@@ -37,8 +53,10 @@ int returnFibNumbers(int maxNum)
     // The Fibonacci equation is defined by the recurrence relation Fn​=Fn−1​+Fn−2​ for n>1, with initial conditions F0​=0 and F1​=1.
     // This means each number in the Fibonacci sequence is the sum of the two preceding numbers.
 
-    if (maxNum == 0) return 0;
-    if (maxNum == 1) return 1;
+    if (maxNum == 0)
+        return 0;
+    if (maxNum == 1)
+        return 1;
     return returnFibNumbers(maxNum - 1) + returnFibNumbers(maxNum - 2);
 }
 
