@@ -13,7 +13,7 @@ void binarySearchDemo()
     int target = 7;
     int inputLength = sizeof(arr) / sizeof(arr[0]);
     int position = binaryIntSearch(arr, target, inputLength);
-    printf("target foud at position: %d\n", position);
+    printf("target found at position: %d\n", position);
     printf("elem in position %d is %d", position, arr[position]);
 }
 

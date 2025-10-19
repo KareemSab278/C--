@@ -13,7 +13,6 @@ int convertBinaryToInt(char binary[]);
 int returnFibNumbers(int maxNum);
 void do_a_flip(int arr[], int moves, int arrLen);
 void findMaxAndMinInArr(int input[], int inputLength);
-// int arrSizeOf(int input[]);
 int compareInts(const void *a, const void *b);
 void sortIntArr(int input[], int inputLen);
 
@@ -29,11 +28,6 @@ void challenges()
     }
     
 }
-
-// int arrSizeOf(int input[])
-// {
-//     return sizeof(input) / sizeof(input[0]);
-// }
 
 int compareInts(const void *a, const void *b)
 {

@@ -4,6 +4,7 @@
         "stdlib.h": "c",
         "qsort.h": "c",
         "binarysearch.h": "c",
-        "binarysearchdemo.h": "c"
+        "binarysearchdemo.h": "c",
+        "stdio.h": "c"
     }
 }
