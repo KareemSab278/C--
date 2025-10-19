@@ -1,8 +1,10 @@
 #include "challenges.h"
+#include "helperAlgorithms/binarySearchDemo.h"
 
 #include <stdio.h>
 
 int main() {
-    challenges();
+    // challenges();
+    binarySearchDemo();
     return 0;
 }

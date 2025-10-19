@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "stdlib.h": "c",
+        "qsort.h": "c",
+        "binarysearch.h": "c",
+        "binarysearchdemo.h": "c"
+    }
+}

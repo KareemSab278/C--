@@ -12,17 +12,60 @@ void largestNumber(int numberOfElems, int numbers[numberOfElems]);
 int convertBinaryToInt(char binary[]);
 int returnFibNumbers(int maxNum);
 void do_a_flip(int arr[], int moves, int arrLen);
+void findMaxAndMinInArr(int input[], int inputLength);
+// int arrSizeOf(int input[]);
+int compareInts(const void *a, const void *b);
+void sortIntArr(int input[], int inputLen);
 
 void challenges()
 {
-    int testArr[] = {1, 2, 3, 4, 5};
-    int arrLen = sizeof(testArr) / sizeof(testArr[0]);
-    do_a_flip(testArr, 2, arrLen);
+    int arr[] = {4, 7, 2, 1, 9};
+    int arrLen = sizeof(arr) / sizeof(arr[0]);
+
+    sortIntArr(arr, arrLen);
+    for (int i = 0; i < arrLen; i++)
+    {
+        printf("%d", arr[i]);
+    }
+    
 }
 
-// q16
+// int arrSizeOf(int input[])
+// {
+//     return sizeof(input) / sizeof(input[0]);
+// }
 
+int compareInts(const void *a, const void *b)
+{
+    int intA = *(const int *)a;
+    int intB = *(const int *)b;
+    return (intA > intB) - (intA < intB);
+}
 
+// sort using qsort
+void sortIntArr(int input[], int inputLen)
+{
+    qsort(input, inputLen, sizeof(int), compareInts);
+}
+
+// example input: arr[] = {4, 7, 2, 1, 9};
+void findMaxAndMinInArr(int input[], int inputLength)
+{
+    int min = input[0];
+    int max = input[0];
+    for (int i = 0; i < inputLength; i++)
+    {
+        if (input[i] > max)
+        {
+            max = input[i];
+        }
+        if (input[i] < min)
+        {
+            min = input[i];
+        }
+    }
+    printf("min: %d \nmax: %d", min, max);
+}
 
 void do_a_flip(int arr[], int moves, int arrLen)
 {
