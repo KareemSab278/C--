@@ -8,11 +8,14 @@
 
 void challenges()
 {
-    printf("Unique elements: ");
-    int arr[] = {1, 2, 2, 3, 4, 4, 4, 5, 5};
+    // int binaryIntSearch(int input[], int target, int inputLength)
+    int arr[] = { 2, 3, 4, 10, 40 };
     int arrLen = sizeof(arr) / sizeof(arr[0]);
-    set(arr, arrLen);
+    printf("found at: %d", binaryIntSearch(arr, 10, arrLen));
+
 }
+
+// tomorrow do q18.
 
 // example input: arr[] = {4, 7, 2, 1, 9};
 void findMaxAndMinInArr(int input[], int inputLength)

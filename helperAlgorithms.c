@@ -2,37 +2,70 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-
-// SET
-void set(int input[], int inputLen)
+// PRINT
+void intPrint(int input[], int inputLen)
 {
-    int output[inputLen];
-    int outputLen = 0;
-
     for (int i = 0; i < inputLen; i++)
     {
-        int isUnique = true;
+        printf("%d", input[i]);
+        if (i != inputLen - 1)
+            printf(", ");
+    }
+    printf("\n");
+}
+
+void charPrint(char input[], int inputLen, bool split)
+{
+    if (split)
+    {
+        for (int i = 0; i < inputLen; i++)
+        {
+            printf("%c", input[i]);
+            if (i != inputLen - 1)
+                printf(", ");
+        }
+    }
+    else
+    {
+        for (int i = 0; i < inputLen; i++)
+        {
+            printf("%c", input[i]);
+        }
+    }
+}
+// test case:
+// char word[] = {'h', 'e', 'l', 'l', 'o'};
+// int wordLen = sizeof(word) / sizeof(word[0]);
+// charPrint(word, wordLen, false); // Expected: hello
+
+// SET
+int set(int input[], int inputLen, int outputSet[])
+{
+    int outputLen = 0;
+    for (int i = 0; i < inputLen; i++)
+    {
+        int isUnique = 1;
         for (int j = 0; j < outputLen; j++)
         {
-            if (output[j] == input[i])
+            if (outputSet[j] == input[i])
             {
-                isUnique = false;
+                isUnique = 0;
                 break;
             }
         }
         if (isUnique)
         {
-            output[outputLen++] = input[i];
+            outputSet[outputLen++] = input[i];
         }
     }
-
-    for (int i = 0; i < outputLen; i++)
-    {
-        printf("%d, ", output[i]);
-    }
-    printf("\n");
+    return outputLen;
 }
-
+// use case:
+// int arr[] = {1, 2, 2, 3, 4, 4, 4, 5, 5};
+// int arrLen = sizeof(arr) / sizeof(arr[0]);
+// int sortedArr[arrLen];
+// int uniqueLen = set(arr, arrLen, sortedArr);
+// intPrint(sortedArr, uniqueLen);
 
 // SORT INTS
 int compareInts(const void *a, const void *b)
@@ -46,7 +79,6 @@ void sortInts(int input[], int inputLen)
     qsort(input, inputLen, sizeof(int), compareInts);
 }
 
-
 // SORT CHARS
 int compareChars(const void *a, const void *b)
 {
@@ -58,7 +90,6 @@ void sortChars(char input[], int inputLen)
 {
     qsort(input, inputLen, sizeof(char), compareChars);
 }
-
 
 // BINARY SEARCH
 int binaryIntSearch(int input[], int target, int inputLength)
