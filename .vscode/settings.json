@@ -6,6 +6,8 @@
         "binarysearch.h": "c",
         "binarysearchdemo.h": "c",
         "stdio.h": "c",
-        "helperalgorithms.h": "c"
+        "helperalgorithms.h": "c",
+        "string.h": "c",
+        "challenges.h": "c"
     }
 }

@@ -1,23 +1,14 @@
 // https://www.geeksforgeeks.org/c/c-exercises/
-#include <stdio.h>
 #include <stdbool.h>
 #include <math.h>
 #include <string.h>
 #include <stdlib.h>
 #include "helperAlgorithms.h" // set, binarysearch, sort
-
-void flipInts();
-void factorial(int num);
-void isEvenOrOdd(int number);
-void largestNumber(int numberOfElems, int numbers[numberOfElems]);
-int convertBinaryToInt(char binary[]);
-int returnFibNumbers(int maxNum);
-void do_a_flip(int arr[], int moves, int arrLen);
-void findMaxAndMinInArr(int input[], int inputLength);
+#include <stdio.h>
 
 void challenges()
 {
-    printf("\n");
+    printf("Unique elements: ");
     int arr[] = {1, 2, 2, 3, 4, 4, 4, 5, 5};
     int arrLen = sizeof(arr) / sizeof(arr[0]);
     set(arr, arrLen);

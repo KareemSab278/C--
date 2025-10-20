@@ -4,5 +4,6 @@
 int main()
 {
     challenges();
+    printf("\n");
     return 0;
 }
