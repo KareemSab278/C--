@@ -4,6 +4,7 @@
 #include <math.h>
 #include <string.h>
 #include <stdlib.h>
+#include "helperAlgorithms.h" // set, binarysearch, sort
 
 void flipInts();
 void factorial(int num);
@@ -13,33 +14,13 @@ int convertBinaryToInt(char binary[]);
 int returnFibNumbers(int maxNum);
 void do_a_flip(int arr[], int moves, int arrLen);
 void findMaxAndMinInArr(int input[], int inputLength);
-int compareInts(const void *a, const void *b);
-void sortIntArr(int input[], int inputLen);
 
 void challenges()
 {
-    int arr[] = {4, 7, 2, 1, 9};
+    printf("\n");
+    int arr[] = {1, 2, 2, 3, 4, 4, 4, 5, 5};
     int arrLen = sizeof(arr) / sizeof(arr[0]);
-
-    sortIntArr(arr, arrLen);
-    for (int i = 0; i < arrLen; i++)
-    {
-        printf("%d", arr[i]);
-    }
-    
-}
-
-int compareInts(const void *a, const void *b)
-{
-    int intA = *(const int *)a;
-    int intB = *(const int *)b;
-    return (intA > intB) - (intA < intB);
-}
-
-// sort using qsort
-void sortIntArr(int input[], int inputLen)
-{
-    qsort(input, inputLen, sizeof(int), compareInts);
+    set(arr, arrLen);
 }
 
 // example input: arr[] = {4, 7, 2, 1, 9};
