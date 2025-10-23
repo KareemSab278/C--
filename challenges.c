@@ -9,13 +9,10 @@
 void challenges()
 {
     // int binaryIntSearch(int input[], int target, int inputLength)
-    int arr[] = { 2, 3, 4, 10, 40 };
-    int arrLen = sizeof(arr) / sizeof(arr[0]);
-    printf("found at: %d", binaryIntSearch(arr, 10, arrLen));
+    IntLinkedList();
 
 }
 
-// tomorrow do q18.
 
 // example input: arr[] = {4, 7, 2, 1, 9};
 void findMaxAndMinInArr(int input[], int inputLength)

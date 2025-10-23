@@ -118,3 +118,24 @@ int binaryIntSearch(int input[], int target, int inputLength)
     }
     return -1;
 }
+
+typedef struct Node
+{
+    int data;
+    struct Node *next; // i dont think this takes any data but if im wrong then it is 4 bytes...
+} Node;
+
+void IntLinkedList()
+{
+    // assign it its data and then point to next node
+    Node nodeRoot; // basically like saying nodeRoot = new Node i think
+    nodeRoot.data = 1;
+    nodeRoot.next = malloc(sizeof(Node)); // assigning 4 bytes lol
+    nodeRoot.next->data = 2;
+    nodeRoot.next->next = NULL; // end of linked list
+
+    printf("Linked list test: ");
+    printf("%d ", nodeRoot.data);
+    printf("%d\n", nodeRoot.next->data);
+    free(nodeRoot.next);
+}

@@ -7,5 +7,6 @@ void sortInts(int input[], int inputLen);
 void sortChars(char input[], int inputLen);
 void intPrint(int input[], int inputLen);
 void charPrint(char input[], int inputLen, bool split);
+void IntLinkedList();
 
 #endif
