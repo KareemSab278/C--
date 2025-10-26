@@ -130,12 +130,28 @@ void IntLinkedList()
     // assign it its data and then point to next node
     Node nodeRoot; // basically like saying nodeRoot = new Node i think
     nodeRoot.data = 1;
-    nodeRoot.next = malloc(sizeof(Node)); // assigning 4 bytes lol
-    nodeRoot.next->data = 2;
-    nodeRoot.next->next = NULL; // end of linked list
+    nodeRoot.next = NULL; // malloc(sizeof(Node)); // assigning 4 bytes lol
 
-    printf("Linked list test: ");
-    printf("%d ", nodeRoot.data);
-    printf("%d\n", nodeRoot.next->data);
+    int nodeValues[] = {2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int nodeValuesLen = sizeof(nodeValues) / sizeof(int);
+
+    Node *curr = &nodeRoot;
+
+    for (int i = 0; i < nodeValuesLen; i++)
+    {
+        curr->next = malloc(sizeof(Node));
+        curr = curr->next;
+        curr->data = nodeValues[i];
+        curr->next = NULL;
+    }
+
+    curr = &nodeRoot;
+    printf("linked list:\n");
+    do
+    {
+        printf("%d\n", curr->data);
+        curr = curr->next;
+    } while (curr != NULL);
+
     free(nodeRoot.next);
 }
